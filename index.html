@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow – Organize your school life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="logo">StudyFlow</h1>
+        <p class="tagline">Organize your school life.</p>
+      </div>
+      <button id="theme-toggle" class="btn btn-ghost" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>My Tasks</h2>
+      <p>Add your homework, see what is due soon and tick it off when you are done.</p>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Add a task</h2>
+      <form id="task-form" class="form" novalidate>
+        <div class="field field-wide">
+          <label for="task-title">Task name</label>
+          <input type="text" id="task-title" placeholder="e.g. Chapter 4 exercises" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="task-subject">Subject</label>
+          <select id="task-subject">
+            <option value="">Choose...</option>
+            <option>Mathematics</option>
+            <option>English</option>
+            <option>Italian</option>
+            <option>History</option>
+            <option>Science</option>
+            <option>Computer Science</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="task-priority">Priority</label>
+          <select id="task-priority">
+            <option>Low</option>
+            <option selected>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="task-date">Due date</label>
+          <input type="date" id="task-date">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Task</button>
+      </form>
+      <p id="form-error" class="form-error" role="alert"></p>
+    </section>
+
+    <section class="stats" aria-label="Statistics">
+      <div class="card stat"><span id="stat-total" class="stat-number">0</span><span class="stat-label">Total Tasks</span></div>
+      <div class="card stat"><span id="stat-completed" class="stat-number">0</span><span class="stat-label">Completed</span></div>
+      <div class="card stat"><span id="stat-remaining" class="stat-number">0</span><span class="stat-label">Remaining</span></div>
+    </section>
+    <p class="completion">Completion: <strong id="stat-percent">0%</strong></p>
+
+    <section class="filters">
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="active">Active</button>
+        <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <label for="filter-subject" class="visually-hidden">Filter by subject</label>
+      <select id="filter-subject">
+        <option value="all">All Subjects</option>
+        <option>Mathematics</option>
+        <option>English</option>
+        <option>Italian</option>
+        <option>History</option>
+        <option>Science</option>
+        <option>Computer Science</option>
+        <option>Other</option>
+      </select>
+    </section>
+
+    <section>
+      <h2 class="section-title">Task List</h2>
+      <div id="task-list" class="task-list"></div>
+    </section>
+  </main>
+
+ 
+  <div id="toast" class="toast" role="status" hidden>
+    <span id="toast-text"></span>
+    <button id="toast-undo" type="button">Undo</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
