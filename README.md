@@ -37,13 +37,6 @@ Students juggle homework from many subjects and often only notice a deadline whe
 2. Open `index.html` in your browser (double-click it).
 3. Add your first task. Your data stays in your browser, even after closing it.
 
-## Project structure
-
-- `index.html` – the page structure (form, statistics, filters, task list)
-- `style.css` – colors, layout, dark mode and mobile design
-- `script.js` – all the logic: tasks, filters, statistics, localStorage, theme
-- `README.md` – this file
-
 ## Future improvements
 
 - Notifications
